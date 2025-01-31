@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/diary', [DiaryController::class, 'index'])->name('diary.index'); //viewはRoutingがあるときのみ、そのほかは直書きで
+Route::get('/diary/create', [DiaryController::class, 'create'])->name('diary.create');
+Route::post('/diary', [DiaryController::class, 'store'])->name('diary.store');
