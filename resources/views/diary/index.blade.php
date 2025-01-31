@@ -8,7 +8,23 @@
 </head>
 
 <body>
-    Hello, {{ $name }}!
+    <h1>日記一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>書いた日付</th>
+                <th>タイトル</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($diaries as $diary)
+            <tr>
+                <td>{{ $diary->date }}</td>
+                <td>{{ $diary->title }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 
 </html>

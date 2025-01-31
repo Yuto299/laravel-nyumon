@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diary;
 use Illuminate\Http\Request;
 
 class DiaryController extends Controller
 {
     public function index()
     {
-        $name = 'Laravel';
-        return view('diary.index', compact('name'));
+        $diaries = Diary::all();
+        return view('diary.index', compact('diaries'));
     }
 }
