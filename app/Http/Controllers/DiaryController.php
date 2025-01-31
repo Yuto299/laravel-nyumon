@@ -45,4 +45,12 @@ class DiaryController extends Controller
         // 保存後にリダイレクトする（例：日記入力ページへ）
         return back()->with('message', '保存しました');
     }
+
+    public function show($id)
+    {
+        dd($id, Diary::find($id));
+
+        $diary = Diary::findOrFail($id);
+        return view('diary.show', compact('diary'));
+    }
 }

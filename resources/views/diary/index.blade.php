@@ -17,9 +17,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($diaries as $diary)
+            @foreach($diaries as $diary)
             <tr>
-                <td>{{ $diary->date }}</td>
+                <td>
+                    <a href="{{ route('diary.show', $diary) }}">{{ $diary->date }}</a>
+                </td>
                 <td>{{ $diary->title }}</td>
             </tr>
             @endforeach
@@ -28,3 +30,11 @@
 </body>
 
 </html>
+
+<!-- @foreach ($diaries as $diary)
+この記述は必要。ここでは個別のデータないから。
+<tr>
+    <td>{{ $diary->date }}</td>
+    <td>{{ $diary->title }}</td>
+</tr>
+@endforeach -->
