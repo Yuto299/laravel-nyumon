@@ -72,4 +72,15 @@ class DiaryController extends Controller
 
         return back()->with('message', '更新しました');
     }
+
+    public function destroy(Request $request)
+    {
+        $id = $request->route('id');
+
+        $diary = Diary::find($id);
+
+        $diary->delete();
+
+        return redirect()->route('diary.index');
+    }
 }
