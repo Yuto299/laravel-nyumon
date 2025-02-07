@@ -13,6 +13,6 @@ class DiariesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Diary::factory()->count(3)->create();
+        Diary::factory()->count(3)->create(); //テストデータを作成
     }
 }
